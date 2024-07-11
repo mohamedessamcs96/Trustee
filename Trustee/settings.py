@@ -43,6 +43,10 @@ INSTALLED_APPS = [
     'accounts',
     'booksummaries',
     'quotes',
+    'todo',
+    'mediations',
+    'sucessstories',
+    'microlearning',
     #third apis
     'django_countries',
     'rest_framework',

@@ -13,6 +13,7 @@ urlpatterns = [
     path('api/summary/', include('booksummaries.urls')),  # Include the summaries app URLs
     path('api-token-auth/', obtain_auth_token, name='api_token_auth'),
     path('api/quotes/', include('quotes.urls')),
+    path('api/', include('todo.urls')),
 
 ]
 

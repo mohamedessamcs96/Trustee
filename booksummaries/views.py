@@ -48,15 +48,15 @@ class BookSummaryDetail(APIView):
         serializer = BookSummarySerializer(summary)
         return Response(serializer.data)
 
-@login_required
-def access_book_summary(request, book_summary_id):
-    book_summary = get_object_or_404(BookSummary, id=book_summary_id)
+# @login_required
+# def access_book_summary(request, book_summary_id):
+#     book_summary = get_object_or_404(BookSummary, id=book_summary_id)
     
-    if not BookSummaryAccessLog.has_purchased_in_last_year(request.user, book_summary) and BookSummaryAccessLog.has_exceeded_monthly_limit(request.user):
-        return HttpResponseForbidden("You have exceeded the limit of 3 book summaries per month.")
+#     if not BookSummaryAccessLog.has_purchased_in_last_year(request.user, book_summary) and BookSummaryAccessLog.has_exceeded_monthly_limit(request.user):
+#         return HttpResponseForbidden("You have exceeded the limit of 3 book summaries per month.")
     
-    # Log the access
-    BookSummaryAccessLog.objects.create(user=request.user, book_summary=book_summary)
+#     # Log the access
+#     BookSummaryAccessLog.objects.create(user=request.user, book_summary=book_summary)
     
-    # Render the book summary
-    return render(request, 'book_summary_detail.html', {'book_summary': book_summary})
+#     # Render the book summary
+#     return render(request, 'book_summary_detail.html', {'book_summary': book_summary})
