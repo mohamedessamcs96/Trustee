@@ -2,6 +2,7 @@
 *. pip install django djangorestframework
 *. pip install django-countries
 *. pip install pillow 
+*. pip install django-ckeditor
 
 
 

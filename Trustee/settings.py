@@ -47,10 +47,12 @@ INSTALLED_APPS = [
     'mediations',
     'sucessstories',
     'microlearning',
+
     #third apis
     'django_countries',
     'rest_framework',
     'rest_framework.authtoken',
+    'ckeditor',
    
     
 ]

@@ -3,13 +3,15 @@ from django.contrib.auth.models import User
 from django.conf import settings
 from datetime import timedelta
 from django.utils import timezone
+from ckeditor.fields import RichTextField
 
 
 
 class BookSummary(models.Model):
     title = models.CharField(max_length=255)
     author = models.CharField(max_length=255)
-    summary = models.TextField()
+    #summary = models.TextField()
+    summary=RichTextField()
     image = models.ImageField(upload_to='book_images/')  # New field for the book image
     seen_by = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='seen_summaries', blank=True)  # Track users who have seen the summary
     created_at = models.DateTimeField(auto_now_add=True)
